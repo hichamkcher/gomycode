@@ -1,0 +1,43 @@
+Début
+    // Initialisation des compteurs
+    longueur ← 0
+    nombre_mots ← 0
+    nombre_voyelles ← 0
+    dans_mot ← Faux
+
+    // Lecture de la phrase caractère par caractère
+    Répéter
+        Lire caractere
+        Si caractere ≠ '.' Alors
+            // Incrémenter le compteur de longueur
+            longueur ← longueur + 1
+
+            // Vérifier si le caractère est une voyelle
+            Si caractere ∈ ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'] Alors
+                nombre_voyelles ← nombre_voyelles + 1
+            FinSi
+
+            // Vérifier si le caractère est un espace
+            Si caractere = ' ' Alors
+                // Si nous étions à l'intérieur d'un mot, cela signifie que nous avons atteint la fin d'un mot
+                Si dans_mot = Vrai Alors
+                    nombre_mots ← nombre_mots + 1
+                    dans_mot ← Faux
+                FinSi
+            Sinon
+                // Si le caractère n'est pas un espace, nous sommes à l'intérieur d'un mot
+                dans_mot ← Vrai
+            FinSi
+        FinSi
+    Jusqu'à ce que caractere = '.'
+
+    // Si la phrase se termine sans espace après le dernier mot, incrémenter le compteur de mots
+    Si dans_mot = Vrai Alors
+        nombre_mots ← nombre_mots + 1
+    FinSi
+
+    // Affichage des résultats
+    Afficher "Longueur de la phrase : ", longueur, " caractères"
+    Afficher "Nombre de mots : ", nombre_mots
+    Afficher "Nombre de voyelles : ", nombre_voyelles
+Fin
