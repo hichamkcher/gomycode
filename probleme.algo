@@ -1,0 +1,34 @@
+-Probleme 1 :
+
+Algorithme SommeDesElements
+Entrée : Ensemble1, Ensemble2 (Tableaux)
+Sortie : Somme (Somme des éléments distincts)
+
+1. Initialiser somme ← 0
+
+2. Pour chaque élément e de Ensemble1 :
+    a. Si e n'est pas dans Ensemble2 :
+        i. Ajouter e à somme
+
+3. Pour chaque élément e de Ensemble2 :
+    a. Si e n'est pas dans Ensemble1 :
+        i. Ajouter e à somme
+
+4. Retourner somme
+Fin Algorithme
+
+-Probleme 2 : 
+Algorithme VérifierOrthogonalité
+Entrée : PairesDeVecteurs (Tableau de paires de vecteurs)
+Sortie : Affiche si chaque paire est orthogonale
+
+1. Pour i de 1 à taille de PairesDeVecteurs / 2 :
+    a. Définir v1 ← PairesDeVecteurs[2*i - 1] (Premier vecteur de la paire)
+    b. Définir v2 ← PairesDeVecteurs[2*i] (Deuxième vecteur de la paire)
+    c. Appeler produit_scalaire(v1, v2)
+    d. Si le produit scalaire (ps) est nul :
+        i. Afficher "Les vecteurs v1 et v2 sont orthogonaux."
+    e. Sinon :
+        i. Afficher "Les vecteurs v1 et v2 ne sont pas orthogonaux. Produit scalaire : ps"
+
+Fin Algorithme
